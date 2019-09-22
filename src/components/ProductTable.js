@@ -8,28 +8,17 @@ const Container = styled.div`
 
 
 const ProductTable = () => {
-    const [products, setProducts] = useState([{
-        nome: "Produto",
-        quantidade: 0,
-        precoUnit: 0.0,
-        categoria: "XBOX",
-    },
-    {
-        nome: "Produto",
-        quantidade: 0,
-        precoUnit: 0.0,
-        categoria: "XBOX",
-    }, {
-        nome: "Produto",
-        quantidade: 0,
-        precoUnit: 0.0,
-        categoria: "XBOX",
-    }, {
-        nome: "Produto",
-        quantidade: 0,
-        precoUnit: 0.0,
-        categoria: "XBOX",
-    }]);
+    const [products, setProducts] = useState([]);
+   
+  
+    const Table = styled.table`
+    width:100%;
+    border: 1px solid black;
+    `;
+
+    const Td = styled.td`
+        border:1px solid black;        
+    `;
 
     const [userRole, setUserRole] = useState("");   
 
@@ -37,7 +26,7 @@ const ProductTable = () => {
     return (
         <Container>
             <h1>PRODUTOS</h1>
-            <table>
+            <Table>
                 <thead>
                     <th>Nome Produto</th>
                     <th>Quantidade</th>
@@ -49,11 +38,11 @@ const ProductTable = () => {
                     {products.map(product => {
                         return (
                             <tr>
-                                <td>{product.nome}</td>
-                                <td><span >- </span>{product.quantidade}<span> +</span></td>
-                                <td>{product.precoUnit}</td>
-                                <td>{product.categoria}</td>
-                                <td>deletar/editar</td>
+                                <Td>{product.nome}</Td>
+                                <Td><span >- </span>{product.quantidade}<span> +</span></Td>
+                                <Td>{product.precoUnit}</Td>
+                                <Td>{product.categoria}</Td>
+                                <Td>deletar/editar</Td>
                             </tr>
                         )
                     })}
@@ -61,7 +50,7 @@ const ProductTable = () => {
 
 
                 </tbody>
-            </table>
+            </Table>
         </Container>
     );
 }

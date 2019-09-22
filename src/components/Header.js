@@ -4,45 +4,45 @@ import styled from 'styled-components'
 
 const HeaderWrapper = styled.div`
     overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: #13ce67;
   padding:0;
   position:fixed;
   width:100%;
   height:4em;
   display:flex;
   justify-content:space-between;
-  top:0
-`
+  top:0;
+`;
 
 const Logout = styled.div`
     width:15%;
     height:4em;
-    background-color: #fafafa;
+    background-color: transparent;
     display:flex;
     flex-wrap:nowrap;
     flex-direction:row;
     align-items:center;
     justify-content:space-around;
     
-`
+`;
 const LogoutText = styled.h6`
     text-transform:uppercase;
     font-size:1.5em;
-    margin:0
-`
+    margin:0;
+`;
 
 const DropdownMenu = styled.div`
-    width:15%;
+    width:10%;
     height:4em;
-    background-color:#000
-`
+    background-color:#000;
+`;
 
 const Avatar = styled.img`
     border-radius:50%;
     height:4em;
-    width:4em
+    width:4em;
 
-`
+`;
 
 
 

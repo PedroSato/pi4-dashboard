@@ -1,15 +1,23 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom'
 import Header from './components/Header';
-import ProductTable from './components/ProductTable'
 import './main.css'
+import Routes from './routes'
 
 
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <ProductTable/>
+      <BrowserRouter>
+
+        <Header />
+        <Routes />
+
+      </BrowserRouter>
+
+
+
     </div>
   );
 }
