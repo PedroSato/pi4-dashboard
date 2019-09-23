@@ -7,6 +7,8 @@ const NewProductWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    
 `
 
 const InputProduct = styled.input`
@@ -22,15 +24,23 @@ const LabelProduct = styled.span`
 `
 
 const InputWrapper = styled.div`
-    width: 35%;
+    width: 80%;
     display:flex;
     flex-direction:column;
 `
 
 const ColumnWrapper = styled.div`
-    width: 80%;
+    width: 45%;
+    height:80%;
     display: flex;
     flex-direction: column;
+`
+
+const FormWrapper = styled.div`
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    justify-content:space-around;
 `
 
 const ButtonProduct = styled.button`
@@ -41,7 +51,7 @@ const ButtonProduct = styled.button`
     border: none;
 `
 const SelectProduct = styled.select`
-    width: 20%;
+    
     height: 3em;
     background: white;
     color: gray;
@@ -49,7 +59,7 @@ const SelectProduct = styled.select`
     font-size: 1em;
     margin-bottom: 2em;
 
-    option {
+    > option {
         color: black;
         background: white;
         display: flex;
@@ -59,56 +69,79 @@ const SelectProduct = styled.select`
     }
 `
 
+const FileLabel = styled.label`
+width: 25%;
+    height: 3em;
+    font-size: 1em;
+    border-radius: 0.25em;
+    border: none;
+    background-color:red;
+`
+
+const ButtonFile = styled.input`
+
+`
+
 const NewProducts = () => {
 
-    return (
-            
-        <NewProductWrapper>
-            <h1>CADASTRO DE PRODUTOS</h1>
-            <ColumnWrapper>
-                <InputWrapper>
-                    <LabelProduct>Nome do Produto: </LabelProduct>
-                    <InputProduct placeholder = "Escreva aqui..."/>
-                </InputWrapper>
+  return (
 
-                <InputWrapper>
-                    <LabelProduct>Descrição: </LabelProduct>
-                    <InputProduct placeholder = "Escreva aqui..."/>
-                </InputWrapper>
+    <NewProductWrapper>
+      <h1>CADASTRO DE PRODUTOS</h1>
+      <FormWrapper>
+        <ColumnWrapper>
+          <InputWrapper>
+            <LabelProduct>Nome do Produto: </LabelProduct>
+            <InputProduct placeholder="Escreva aqui..."/>
+          </InputWrapper>
 
-                <InputWrapper>
-                    <LabelProduct>Preço: </LabelProduct>
-                    <InputProduct placeholder = "Escreva aqui..."/>
-                </InputWrapper>
+          <InputWrapper>
+            <LabelProduct>Descrição: </LabelProduct>
+            <InputProduct placeholder="Escreva aqui..."/>
+          </InputWrapper>
 
-                <InputWrapper>
-                    <LabelProduct>Pergunta: </LabelProduct>
-                    <InputProduct placeholder = "Escreva aqui..."/>
-                </InputWrapper>
+          <InputWrapper>
+            <LabelProduct>Preço: </LabelProduct>
+            <InputProduct placeholder="Escreva aqui..."/>
+          </InputWrapper>
 
-                <InputWrapper>
-                    <LabelProduct>Resposta: </LabelProduct>
-                    <InputProduct placeholder = "Escreva aqui..."/>
-                </InputWrapper>
-            </ColumnWrapper>
+          <InputWrapper>
+            <LabelProduct>Pergunta: </LabelProduct>
+            <InputProduct placeholder="Escreva aqui..."/>
+          </InputWrapper>
 
-            <ColumnWrapper>
-                <LabelProduct>Categoria: </LabelProduct>
-                <SelectProduct>
-                    <option value="" hidden>Selecionar...</option>
-                    <option value="1">XBOX</option>
-                    <option value="2">PS4</option>
-                    <option value="3">NINTENDO SWITCH</option>
-                    <option value="4">PC</option>
-                </SelectProduct>
-            </ColumnWrapper>
+          <InputWrapper>
+            <LabelProduct>Resposta: </LabelProduct>
+            <InputProduct placeholder="Escreva aqui..."/>
+          </InputWrapper>
 
-            <ColumnWrapper>
-                <ButtonProduct>SALVAR</ButtonProduct>
-            </ColumnWrapper>
-        </NewProductWrapper>
-        
-    )
+          <InputWrapper>
+            <LabelProduct>Categoria: </LabelProduct>
+            <SelectProduct>
+              <option value="" hidden>Selecionar...</option>
+              <option value="1">XBOX</option>
+              <option value="2">PS4</option>
+              <option value="3">NINTENDO SWITCH</option>
+              <option value="4">PC</option>
+            </SelectProduct>
+          </InputWrapper>
+
+        </ColumnWrapper>
+
+        <ColumnWrapper>
+
+          <img src="https://dummyimage.com/200x200/000/fff"/>
+          <FileLabel htmlFor="files">Alterar a Foto</FileLabel>
+          <input id="files" style={{visibility: 'hidden'}} type="file"/>
+
+        </ColumnWrapper>
+      </FormWrapper>
+
+      <ButtonProduct>SALVAR</ButtonProduct>
+
+    </NewProductWrapper>
+
+  )
 
 }
 export default NewProducts;
