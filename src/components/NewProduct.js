@@ -7,20 +7,18 @@ const NewProductWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    
 `
 
 const InputProduct = styled.input`
     margin-bottom: 2em;
-    height: 2.5em;
+    height: 2.3em;
     font-size: 1em;
     border-radius: 0.25em;
     border: 1px solid gray;
 `
 
 const LabelProduct = styled.span`
-    font-size: 1.5em;
+    font-size: 1.3em;
 `
 
 const InputWrapper = styled.div`
@@ -70,12 +68,12 @@ const SelectProduct = styled.select`
 `
 
 const FileLabel = styled.label`
-width: 25%;
+    width: 25%;
     height: 3em;
-    font-size: 1em;
+    font-size: 1.25em;
     border-radius: 0.25em;
     border: none;
-    background-color:red;
+    background-color: gray;
 `
 
 const ButtonFile = styled.input`
@@ -103,6 +101,10 @@ const NewProducts = () => {
           <InputWrapper>
             <LabelProduct>Preço: </LabelProduct>
             <InputProduct placeholder="Escreva aqui..."/>
+
+            <LabelProduct>Quantidade: </LabelProduct>
+            <InputProduct type="number" min="0" placeholder="0"/>
+            
           </InputWrapper>
 
           <InputWrapper>
@@ -114,6 +116,13 @@ const NewProducts = () => {
             <LabelProduct>Resposta: </LabelProduct>
             <InputProduct placeholder="Escreva aqui..."/>
           </InputWrapper>
+        </ColumnWrapper>
+
+        <ColumnWrapper>
+
+          <img src="https://dummyimage.com/200x200/000/fff"/>
+          <FileLabel htmlFor="files">Carregar imagem</FileLabel>
+          <input id="files" style={{visibility: 'hidden'}} type="file"/>
 
           <InputWrapper>
             <LabelProduct>Categoria: </LabelProduct>
@@ -126,13 +135,19 @@ const NewProducts = () => {
             </SelectProduct>
           </InputWrapper>
 
-        </ColumnWrapper>
-
-        <ColumnWrapper>
-
-          <img src="https://dummyimage.com/200x200/000/fff"/>
-          <FileLabel htmlFor="files">Alterar a Foto</FileLabel>
-          <input id="files" style={{visibility: 'hidden'}} type="file"/>
+          <InputWrapper>
+            <LabelProduct>Gênero: </LabelProduct>
+            <SelectProduct>
+              <option value="" hidden>Selecionar...</option>
+              <option value="0">AÇÃO</option>
+              <option value="1">AVENTURA</option>
+              <option value="2">LUTA</option>
+              <option value="3">RPG</option>
+              <option value="4">ESTRATÉGIA</option>
+              <option value="5">CORRIDA</option>
+              <option value="6">ESPORTE</option>
+            </SelectProduct>
+          </InputWrapper>
 
         </ColumnWrapper>
       </FormWrapper>
