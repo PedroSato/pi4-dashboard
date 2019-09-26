@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
 const NewProductWrapper = styled.div`
     margin-top: 4em;
     display: flex;
@@ -10,7 +9,7 @@ const NewProductWrapper = styled.div`
 `
 
 const InputProduct = styled.input`
-    margin-bottom: 2em;
+    margin-bottom: 1.75em;
     height: 2.3em;
     font-size: 1em;
     border-radius: 0.25em;
@@ -19,12 +18,19 @@ const InputProduct = styled.input`
 
 const LabelProduct = styled.span`
     font-size: 1.3em;
+    
 `
 
 const InputWrapper = styled.div`
     width: 80%;
     display:flex;
-    flex-direction:column;
+    flex-direction: column;
+`
+
+const InputW = styled.div`
+    width: 80%;
+    display:flex;
+    flex-direction: row;
 `
 
 const ColumnWrapper = styled.div`
@@ -32,6 +38,13 @@ const ColumnWrapper = styled.div`
     height:80%;
     display: flex;
     flex-direction: column;
+`
+
+const ColumnW = styled.div`
+    width: 45%;
+    height:80%;
+    display: flex;
+    flex-direction: row;
 `
 
 const FormWrapper = styled.div`
@@ -56,6 +69,7 @@ const SelectProduct = styled.select`
     padding-left: 5px;
     font-size: 1em;
     margin-bottom: 2em;
+    border-radius: 0.25em;
 
     > option {
         color: black;
@@ -76,10 +90,6 @@ const FileLabel = styled.label`
     background-color: gray;
 `
 
-const ButtonFile = styled.input`
-
-`
-
 const NewProducts = () => {
 
   return (
@@ -98,15 +108,18 @@ const NewProducts = () => {
             <InputProduct placeholder="Escreva aqui..."/>
           </InputWrapper>
 
-          <InputWrapper>
-            <LabelProduct>Preço: </LabelProduct>
-            <InputProduct placeholder="Escreva aqui..."/>
-
-            <LabelProduct>Quantidade: </LabelProduct>
-            <InputProduct type="number" min="0" placeholder="0"/>
+          <ColumnW>
+            <InputWrapper>
+              <LabelProduct>Preço: </LabelProduct>
+              <InputProduct placeholder="00,00" style={{ marginRight: 60 }}/>
+            </InputWrapper>
             
-          </InputWrapper>
-
+            <InputWrapper>
+              <LabelProduct>Quantidade: </LabelProduct>
+              <InputProduct type="number" min="0" placeholder="0" style={{ marginRight: 60 }}/>
+            </InputWrapper>    
+          </ColumnW>
+ 
           <InputWrapper>
             <LabelProduct>Pergunta: </LabelProduct>
             <InputProduct placeholder="Escreva aqui..."/>
@@ -119,7 +132,6 @@ const NewProducts = () => {
         </ColumnWrapper>
 
         <ColumnWrapper>
-
           <img src="https://dummyimage.com/200x200/000/fff"/>
           <FileLabel htmlFor="files">Carregar imagem</FileLabel>
           <input id="files" style={{visibility: 'hidden'}} type="file"/>
@@ -135,7 +147,7 @@ const NewProducts = () => {
             </SelectProduct>
           </InputWrapper>
 
-          <InputWrapper>
+          {/*<InputWrapper>
             <LabelProduct>Gênero: </LabelProduct>
             <SelectProduct>
               <option value="" hidden>Selecionar...</option>
@@ -147,7 +159,7 @@ const NewProducts = () => {
               <option value="5">CORRIDA</option>
               <option value="6">ESPORTE</option>
             </SelectProduct>
-          </InputWrapper>
+          </InputWrapper>*/}
 
         </ColumnWrapper>
       </FormWrapper>
