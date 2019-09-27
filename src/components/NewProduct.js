@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import CurrencyFormat from 'react-currency-format';
+import ReactMultiSelectCheckboxes from 'react-multiselect-checkboxes';
 
 const NewProductWrapper = styled.div`
     margin-top: 4em;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Raleway', sans-serif;
 `
 
 const InputProduct = styled.input`
@@ -17,8 +20,10 @@ const InputProduct = styled.input`
 `
 
 const LabelProduct = styled.span`
-    font-size: 1.3em;
-    
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+
 `
 
 const InputWrapper = styled.div`
@@ -27,24 +32,20 @@ const InputWrapper = styled.div`
     flex-direction: column;
 `
 
-const InputW = styled.div`
-    width: 80%;
-    display:flex;
-    flex-direction: row;
-`
-
 const ColumnWrapper = styled.div`
     width: 45%;
     height:80%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 `
 
-const ColumnW = styled.div`
+const RowWrapper = styled.div`
     width: 45%;
     height:80%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between !important;
 `
 
 const FormWrapper = styled.div`
@@ -57,38 +58,53 @@ const FormWrapper = styled.div`
 const ButtonProduct = styled.button`
     width: 25%;
     height: 3em;
+    margin-top: 8em;
     font-size: 1em;
     border-radius: 0.25em;
     border: none;
-`
-const SelectProduct = styled.select`
-    
-    height: 3em;
-    background: white;
-    color: gray;
-    padding-left: 5px;
-    font-size: 1em;
-    margin-bottom: 2em;
-    border-radius: 0.25em;
-
-    > option {
-        color: black;
-        background: white;
-        display: flex;
-        white-space: pre;
-        min-height: 20px;
-        padding: 0px 2px 1px;
-    }
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover{
+      background-color: black;
+      color: gray;
+    };
 `
 
 const FileLabel = styled.label`
-    width: 25%;
-    height: 3em;
-    font-size: 1.25em;
+    width: 20%;
+    height: 2em;
+    font-size: 0.8em;
+    text-align: center;
+    padding-top: 0.9em;
+    margin-top: 1em;
     border-radius: 0.25em;
     border: none;
     background-color: gray;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover{
+      background-color: black;
+      color: gray;
+    };
 `
+
+const ProductImage = styled.img`
+    width: 14em;
+    height: 14em;
+`
+const ImageButton = styled.input`
+    visibility: hidden;
+`
+const options = [
+    { label: 'XBOX 360', value: 1},
+    { label: 'XBOX One', value: 2},
+    { label: 'PlayStation 3', value: 3},
+    { label: 'PlayStation 4', value: 4},
+    { label: 'Nintendo Wii', value: 5},
+    { label: 'Nintendo Wii U', value: 6},
+    { label: 'Nintendo 3DS', value: 7},
+    { label: 'PC', value: 8},
+];
 
 const NewProducts = () => {
 
@@ -100,52 +116,42 @@ const NewProducts = () => {
         <ColumnWrapper>
           <InputWrapper>
             <LabelProduct>Nome do Produto: </LabelProduct>
-            <InputProduct placeholder="Escreva aqui..."/>
+            <InputProduct placeholder="Escreva aqui..." />
           </InputWrapper>
 
           <InputWrapper>
             <LabelProduct>Descrição: </LabelProduct>
-            <InputProduct placeholder="Escreva aqui..."/>
+            <InputProduct placeholder="Escreva aqui..." />
           </InputWrapper>
 
-          <ColumnW>
+          <RowWrapper>
             <InputWrapper>
-              <LabelProduct>Preço: </LabelProduct>
-              <InputProduct placeholder="00,00" style={{ marginRight: 60 }}/>
+              <LabelProduct style={{ alignSelf: "left" }}>Preço: </LabelProduct>
+              <CurrencyFormat prefix="R$" placeholder="R$00.00" style={{ 
+                marginBottom: "1.75em",
+                height: "2.3em",
+                fontSize: "1em",
+                borderRadius: "0.25em",
+                marginRight: 60, 
+                border: "1px solid gray" }}/>
             </InputWrapper>
-            
+
             <InputWrapper>
               <LabelProduct>Quantidade: </LabelProduct>
-              <InputProduct type="number" min="0" placeholder="0" style={{ marginRight: 60 }}/>
-            </InputWrapper>    
-          </ColumnW>
- 
-          <InputWrapper>
-            <LabelProduct>Pergunta: </LabelProduct>
-            <InputProduct placeholder="Escreva aqui..."/>
-          </InputWrapper>
+              <InputProduct type="number" min="0" placeholder="0" style={{ marginRight: 60 }} />
+            </InputWrapper>
+          </RowWrapper>
 
           <InputWrapper>
-            <LabelProduct>Resposta: </LabelProduct>
-            <InputProduct placeholder="Escreva aqui..."/>
+            <LabelProduct>Plataforma: </LabelProduct>
+            <ReactMultiSelectCheckboxes options={options} />
           </InputWrapper>
         </ColumnWrapper>
 
         <ColumnWrapper>
-          <img src="https://dummyimage.com/200x200/000/fff"/>
+          <ProductImage src="https://dummyimage.com/200x200/000/fff" />
           <FileLabel htmlFor="files">Carregar imagem</FileLabel>
-          <input id="files" style={{visibility: 'hidden'}} type="file"/>
-
-          <InputWrapper>
-            <LabelProduct>Categoria: </LabelProduct>
-            <SelectProduct>
-              <option value="" hidden>Selecionar...</option>
-              <option value="1">XBOX</option>
-              <option value="2">PS4</option>
-              <option value="3">NINTENDO SWITCH</option>
-              <option value="4">PC</option>
-            </SelectProduct>
-          </InputWrapper>
+          <ImageButton id="files" type="file" />
 
           {/*<InputWrapper>
             <LabelProduct>Gênero: </LabelProduct>
