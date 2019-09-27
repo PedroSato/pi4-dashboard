@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import CurrencyFormat from 'react-currency-format';
-import ReactMultiSelectCheckboxes from 'react-multiselect-checkboxes';
+import Select from 'react-select';
 
 const NewProductWrapper = styled.div`
     margin-top: 4em;
@@ -17,13 +17,15 @@ const InputProduct = styled.input`
     font-size: 1em;
     border-radius: 0.25em;
     border: 1px solid gray;
+    font-family: 'Raleway', sans-serif;
+    
 `
 
 const LabelProduct = styled.span`
     font-size: 1.2em;
     font-family: 'Roboto', sans-serif;
     font-weight: lighter;
-
+    
 `
 
 const InputWrapper = styled.div`
@@ -37,7 +39,7 @@ const ColumnWrapper = styled.div`
     height:80%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding-left: 10em;
 `
 
 const RowWrapper = styled.div`
@@ -45,7 +47,6 @@ const RowWrapper = styled.div`
     height:80%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between !important;
 `
 
 const FormWrapper = styled.div`
@@ -53,10 +54,11 @@ const FormWrapper = styled.div`
     flex-direction:row;
     width:100%;
     justify-content:space-around;
+    
 `
 
 const ButtonProduct = styled.button`
-    width: 25%;
+    width: 15%;
     height: 3em;
     margin-top: 8em;
     font-size: 1em;
@@ -79,7 +81,7 @@ const FileLabel = styled.label`
     margin-top: 1em;
     border-radius: 0.25em;
     border: none;
-    background-color: gray;
+    background-color: lightgray;
     cursor: pointer;
     transition: 0.3s;
     &:hover{
@@ -95,18 +97,27 @@ const ProductImage = styled.img`
 const ImageButton = styled.input`
     visibility: hidden;
 `
+
 const options = [
-    { label: 'XBOX 360', value: 1},
-    { label: 'XBOX One', value: 2},
-    { label: 'PlayStation 3', value: 3},
-    { label: 'PlayStation 4', value: 4},
-    { label: 'Nintendo Wii', value: 5},
-    { label: 'Nintendo Wii U', value: 6},
-    { label: 'Nintendo 3DS', value: 7},
-    { label: 'PC', value: 8},
+    { label: 'XBOX 360', value: 'XBOX 360' },
+    { label: 'XBOX One', value: 'XBOX One' },
+    { label: 'PlayStation 3', value: 'PlayStation 3' },
+    { label: 'PlayStation 4', value: 'PlayStation 4' },
+    { label: 'Nintendo Wii', value: 'Nintendo Wii' },
+    { label: 'Nintendo Wii U', value: 'Nintendo Wii U' },
+    { label: 'Nintendo 3DS', value: 'Nintendo 3DS' },
+    { label: 'PC', value: 'PC' },
 ];
 
 const NewProducts = () => {
+
+  const customStyles = {
+    
+    control: (base) => ({
+      ...base,
+      borderColor: "gray",
+    })
+  };
 
   return (
 
@@ -131,6 +142,7 @@ const NewProducts = () => {
                 marginBottom: "1.75em",
                 height: "2.3em",
                 fontSize: "1em",
+                fontFamily: 'Raleway',
                 borderRadius: "0.25em",
                 marginRight: 60, 
                 border: "1px solid gray" }}/>
@@ -144,7 +156,23 @@ const NewProducts = () => {
 
           <InputWrapper>
             <LabelProduct>Plataforma: </LabelProduct>
-            <ReactMultiSelectCheckboxes options={options} />
+            <Select styles={customStyles}
+            options={options} 
+            isMulti 
+            className="basic-multi-select"
+            classNamePrefix="select"
+            closeMenuOnSelect={false}
+            placeholder="Selecionar..."
+            theme={theme => ({
+              ...theme,
+              borderRadius: "0.25em",
+              colors: {
+                ...theme.colors,
+                primary25: 'lightgray',
+                primary: 'gray',
+                neutral90: 'black'
+              }, })}
+            />
           </InputWrapper>
         </ColumnWrapper>
 
