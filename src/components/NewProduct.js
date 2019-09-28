@@ -29,7 +29,7 @@ const LabelProduct = styled.span`
 `
 
 const InputWrapper = styled.div`
-    width: 80%;
+    width: 120%;
     display:flex;
     flex-direction: column;
 `
@@ -60,7 +60,7 @@ const FormWrapper = styled.div`
 const ButtonProduct = styled.button`
     width: 15%;
     height: 3em;
-    margin-top: 8em;
+    margin-top: 5em;
     font-size: 1em;
     border-radius: 0.25em;
     border: none;
@@ -73,7 +73,7 @@ const ButtonProduct = styled.button`
 `
 
 const FileLabel = styled.label`
-    width: 20%;
+    width: 45%;
     height: 2em;
     font-size: 0.8em;
     text-align: center;
@@ -176,7 +176,7 @@ const NewProducts = () => {
           </InputWrapper>
         </ColumnWrapper>
 
-        <ColumnWrapper>
+        <ColumnWrapper style={{alignItems: "center", paddingRight: 150}}>
           <ProductImage src="https://dummyimage.com/200x200/000/fff" />
           <FileLabel htmlFor="files">Carregar imagem</FileLabel>
           <ImageButton id="files" type="file" />
