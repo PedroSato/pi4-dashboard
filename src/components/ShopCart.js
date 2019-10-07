@@ -10,8 +10,10 @@ const ShopCartWrapper = styled.div`
     font-family: 'Raleway', sans-serif;
 `
 
-const ButtonProduct = styled.button`
-    width: 85%;
+const ButtonDelete = styled.button`
+    background: url("https://i.imgur.com/a59bh4H.png") no-repeat center;
+    background-color: lightgray;
+    width: 55%;
     height: 3em;
     font-size: 1em;
     border-radius: 0.25em;
@@ -19,9 +21,61 @@ const ButtonProduct = styled.button`
     cursor: pointer;
     transition: 0.3s;
     &:hover{
-      background-color: black;
-      color: gray;
+      background-color: red;
+      color: white;
     };
+`
+
+const ButtonContinued = styled.button`
+    margin-left: 125px;
+    width: 35%;
+    height: 2em;
+    font-size: 1em;
+    border-radius: 0.25em;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover{
+      background-color: black;
+      color: white;
+    };
+`
+
+const ButtonFinished = styled.button`
+    margin-left:10px;
+    width: 30%;
+    height: 2em;
+    font-size: 1em;
+    border-radius: 0.25em;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover{
+      background-color: green;
+      color: white;
+    };
+`
+
+const InputCounter = styled.input`
+    height: 2em;
+    width: 3em;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 0.25em;
+    border: 1px solid gray;
+    font-family: 'Raleway', sans-serif;
+`
+
+const ColumnWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+const RowWrapper = styled.div`
+    margin-left: 40em;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
 `
 
 const ShopCart = () =>{
@@ -33,12 +87,11 @@ const ShopCart = () =>{
     `;
 
     const Th = styled.th`  
-        text-align: center;     
+             
     `;
 
     const Td = styled.td`
-        
-        text-align: center;
+        margin-left: 10px;
         padding: 15px;
     `;
 
@@ -63,35 +116,35 @@ const ShopCart = () =>{
                 </thead>
                 <tbody>
                 <tr>
-                        <Td>a</Td>
-                        <Td>R$150,00</Td>
-                        <Td>1</Td>
-                        <Td>R$150,00</Td>
-                        <Td><ButtonProduct></ButtonProduct></Td>
-                    </tr>
-                    <tr>
-                        <Td>a</Td>
-                        <Td>R$169,90</Td>
-                        <Td>1</Td>
-                        <Td>R$169,90</Td>
-                        <Td><ButtonProduct></ButtonProduct></Td>
-                    </tr>
-                    <tr>
-                        <Td>a</Td>
-                        <Td>R$139,99</Td>
-                        <Td>1</Td>
-                        <Td>R$139,99</Td>
-                        <Td><ButtonProduct></ButtonProduct></Td>
-                    </tr>
-                    <tr>
-                        <Td>TOTAL: R$459,89</Td>
-                    </tr>
-                    <tr>
-                        <button>CONTINUAR COMPRANDO</button>
-                        <button>FINALIZAR COMPRA</button>
-                    </tr>
+                    <Td>a</Td>
+                    <Td>R$150,00</Td>
+                    <Td>+ <InputCounter placeholder="1"/> -</Td>
+                    <Td>R$150,00</Td>
+                    <Td><ButtonDelete/></Td>
+                </tr>
+                <tr>
+                    <Td>a</Td>
+                    <Td>R$169,90</Td>
+                    <Td>+ <InputCounter placeholder="1"/> -</Td>
+                    <Td>R$169,90</Td>
+                    <Td><ButtonDelete/></Td>
+                </tr>
+                <tr>
+                    <Td>a</Td>
+                    <Td>R$139,99</Td>
+                    <Td>+ <InputCounter placeholder="1"/> -</Td>
+                    <Td>R$139,99</Td>
+                    <Td><ButtonDelete/></Td>
+                </tr>
+                <tr>
+                    <Td>TOTAL: R$459,89</Td>
+                </tr>
                 </tbody>
             </Table>
+            <RowWrapper>
+                <ButtonContinued>CONTINUAR COMPRANDO</ButtonContinued>
+                <ButtonFinished type="submit">FINALIZAR COMPRA</ButtonFinished>
+            </RowWrapper>
         </ShopCartWrapper>
     );
 }
