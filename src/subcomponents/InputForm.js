@@ -2,9 +2,11 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 
 
-const InputForm = (placeholder) => {
+const InputForm = ({placeholder}) => {
+    
     const Input = styled.input`
-    margin-bottom: 2em;
+    font-family: 'Raleway', sans-serif;
+    width: 80%;
     height: 2.3em;
     font-size: 1em;
     border-radius: 0.25em;
