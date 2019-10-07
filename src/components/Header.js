@@ -15,6 +15,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const Logout = styled.div`
+    font-family: 'Raleway', sans-serif;
     width:15%;
     height:4em;
     background-color: transparent;
