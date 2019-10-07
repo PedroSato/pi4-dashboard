@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 
 const Button = styled.button`
+  font-family: 'Raleway', sans-serif;
   position:relative;
   border: none;
   outline: 0;
@@ -14,7 +15,7 @@ const Button = styled.button`
   font-size: 18px;
   transition:.3s;
   &:hover{
-      background-color: grey;
+      background-color: green;
       color: black;
     };
   `
