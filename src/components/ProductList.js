@@ -3,19 +3,22 @@ import styled from 'styled-components'
 import AddButton from '../subcomponents/AddButton'
 import Magnifier from '../assets/search.png'
 import InputForm from '../subcomponents/InputForm'
+
 const SearchBarWrapper = styled.div`
+    
     overflow: hidden;
-  background-color: #e9e9e9;
-  height:4em;
-  width:80%;
-  margin:0 auto;
-  margin-top:5em;
-  display:flex;
-  align-items:center;
+    background-color: #e9e9e9;
+    height:4em;
+    width:80%;
+    margin:0 auto;
+    margin-top:5em;
+    display:flex;
+    align-items:center;
 
 `
 
 const CardWrapper = styled.div`
+    font-family: 'Roboto', sans-serif;
     margin-top:4em;
     display:flex;
     flex-wrap:wrap;
@@ -23,7 +26,7 @@ const CardWrapper = styled.div`
 `
 
 const Card = styled.div`
-    
+    font-family: 'Roboto', sans-serif;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 20%;
   margin: auto;
@@ -44,6 +47,7 @@ const Image = styled.img`
 `
 
 const SearchButton = styled.button`
+    font-family: 'Raleway', sans-serif;
     border:0;
     color:white;
     background-color: #000;
@@ -51,15 +55,13 @@ const SearchButton = styled.button`
     border-radius:.5em;
     padding:.5em 3em;
     margin-left:2em;
-
+    cursor: pointer;
+    transition: 0.3s;
     &:hover{
         color:black;
         background-color: #fff;
     }
 `
-
-
-
 
 const ProductList = () => {
     const [products, setProducts] = useState([{
@@ -130,20 +132,20 @@ const ProductList = () => {
         <Fragment>
 
             <SearchBarWrapper>
-                <img style={{height:'70%', margin:'.5em 1em', cursor:'pointer'}} src={Magnifier}/>
+                <img style={{height:'70%', margin:'.5em 1em'}} src={Magnifier}/>
                
-                <input type="text" placeholder="Pesquisar " style={{marginTop:'0',maxHeight:'3em', width:'80%',fontSize: '1em', borderRadius: '0.25em',border: '1px solid gray'}}></input>
+                <InputForm type="text" placeholder="Pesquisar..."/>
                 <SearchButton>OK</SearchButton>
-                </SearchBarWrapper>
+            </SearchBarWrapper>
                 
             <CardWrapper>
                 {products.map(product => {
                     return (
                         <Card>
                             <Image src={product.imagem} alt="GodOfWar" />
-                            <h1>{product.titulo}</h1>
-                            <p>R${product.preco}</p>
-                            <p>{product.descricao}</p>
+                            <h1 style={{fontFamily: 'Roboto'}}>{product.titulo}</h1>
+                            <p style={{fontFamily: 'Raleway'}}>R${product.preco}</p>
+                            <p style={{fontFamily: 'Raleway'}}>{product.descricao}</p>
                             <p><AddButton text="Adicionar ao Carrinho"></AddButton></p>
                         </Card>
                     )
