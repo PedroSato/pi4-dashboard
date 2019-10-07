@@ -3,15 +3,16 @@ import styled from 'styled-components'
 // arrow function (aqui vão os parâmetros) => {aqui vai o código da função}
 
 const HeaderWrapper = styled.div`
+    z-index: 40px;
     overflow: hidden;
-  background-color: #13ce67;
-  padding:0;
-  position:fixed;
-  width:100%;
-  height:4em;
-  display:flex;
-  justify-content:space-between;
-  top:0;
+    background-color: gray;
+    padding:0;
+    position:fixed;
+    width:100%;
+    height:4em;
+    display:flex;
+    justify-content:space-between;
+    top:0;
 `;
 
 const Logout = styled.div`
@@ -45,17 +46,41 @@ const Avatar = styled.img`
 
 `;
 
+function getWidthString(span){
+    if(!span) return;
 
+    let width = span / 12 * 100;
+    return `width: ${width}%;`
+}
+
+const ColumnWrapper = styled.div`
+    float: left;
+    ${({ xs })=> (xs ? getWidthString(xs) : "width: 100%")};
+
+    @media only screen and (min-width: 768px) {
+        ${({ sm }) => sm && getWidthString(sm)};  
+    }
+
+    @media only screen and (min-width: 992px) {
+        ${({ md }) => md && getWidthString(md)};  
+    }
+
+    @media only screen and (min-width: 1200px) {
+        ${({ lg }) => lg && getWidthString(lg)};  
+    }
+`
 
 const Header = () => { // <---- declaração de função em javascript e SIM vc coloca ela dentro de uma variável constante
     return (
-        <HeaderWrapper>
-            <DropdownMenu />
-            <Logout>
-                <LogoutText>Logout</LogoutText>
-                <Avatar src="https://www.bluecross.org.uk/sites/default/files/d8/assets/images/118809lprLR.jpg"></Avatar>
-            </Logout>
-        </HeaderWrapper>
+        <ColumnWrapper>
+            <HeaderWrapper>
+                <DropdownMenu />
+                <Logout>
+                    <LogoutText>Logout</LogoutText>
+                    <Avatar src="https://www.bluecross.org.uk/sites/default/files/d8/assets/images/118809lprLR.jpg"></Avatar>
+                </Logout>
+            </HeaderWrapper>
+        </ColumnWrapper>
     )
 }
 

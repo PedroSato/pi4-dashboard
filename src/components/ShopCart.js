@@ -27,6 +27,7 @@ const ButtonDelete = styled.button`
 `
 
 const ButtonContinued = styled.button`
+    font-family: 'Roboto', sans-serif;
     margin-left: 125px;
     width: 35%;
     height: 2em;
@@ -42,6 +43,7 @@ const ButtonContinued = styled.button`
 `
 
 const ButtonFinished = styled.button`
+    font-family: 'Roboto', sans-serif;
     margin-left:10px;
     width: 30%;
     height: 2em;
@@ -66,16 +68,19 @@ const InputCounter = styled.input`
     font-family: 'Raleway', sans-serif;
 `
 
-const ColumnWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-`
 const RowWrapper = styled.div`
-    margin-left: 40em;
+
+    margin-left: 39em;
     width: 50%;
     display: flex;
     flex-direction: row;
     padding: 10px;
+`
+
+const TotalPrice = styled.div`
+    margin-left: 35em;
+    font-size: 1.5em;
+    font-weight: bold;
 `
 
 const ShopCart = () =>{
@@ -116,29 +121,34 @@ const ShopCart = () =>{
                 </thead>
                 <tbody>
                 <tr>
-                    <Td>a</Td>
+                    <Td><img style={{height: '5em'}} src="https://www.virginmegastore.ae/medias/sys_master/root/h8e/h36/9159138967582/God-of-War-378794-Detail.jpg"/> Jogo God of War</Td>
                     <Td>R$150,00</Td>
                     <Td>+ <InputCounter placeholder="1"/> -</Td>
                     <Td>R$150,00</Td>
                     <Td><ButtonDelete/></Td>
                 </tr>
                 <tr>
-                    <Td>a</Td>
+                    <Td><img style={{height: '5em'}} src="https://http2.mlstatic.com/mario-kart-8-deluxe-em-portugus-nintendo-switch-lacrado-frete-gratis-D_NQ_NP_853052-MLB25555878987_052017-F.webp"/> Jogo Mario Kart Deluxe</Td>
                     <Td>R$169,90</Td>
                     <Td>+ <InputCounter placeholder="1"/> -</Td>
                     <Td>R$169,90</Td>
                     <Td><ButtonDelete/></Td>
                 </tr>
                 <tr>
-                    <Td>a</Td>
+                    <Td><img style={{height: '5em'}} src="https://i.imgur.com/FvF0BDZ.png"/> Jogo GTA V</Td>
                     <Td>R$139,99</Td>
                     <Td>+ <InputCounter placeholder="1"/> -</Td>
                     <Td>R$139,99</Td>
                     <Td><ButtonDelete/></Td>
                 </tr>
-                <tr>
-                    <Td>TOTAL: R$459,89</Td>
-                </tr>
+                
+                </tbody>
+            </Table>
+            <Table>
+                <tbody>
+                    <tr>
+                        <TotalPrice>TOTAL: R$459,89</TotalPrice>
+                    </tr>
                 </tbody>
             </Table>
             <RowWrapper>

@@ -3,9 +3,9 @@ import styled from 'styled-components'
 
 const Button = styled.button`
   font-family: 'Roboto', sans-serif;
+  margin-bottom: 10px;
   position:static;
   border: none;
-  outline: 0;
   padding: 12px;
   color: white;
   background-color: #000;
@@ -15,16 +15,16 @@ const Button = styled.button`
   font-size: 18px;
   transition:.3s;
   &:hover{
-      background-color: green;
+      background-color: lightgray;
       color: black;
     };
   `
 
-const AddButton = ({ text }) => {
+const DetailButton = ({ text }) => {
     return (
         <Fragment>
             <Button>{text}</Button>
         </Fragment>)
 }
 
-export default AddButton
+export default DetailButton

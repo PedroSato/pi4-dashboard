@@ -1,6 +1,7 @@
 import React, { useState, Fragment } from 'react'
 import styled from 'styled-components'
 import AddButton from '../subcomponents/AddButton'
+import DetailButton from '../subcomponents/DetailButton'
 import Magnifier from '../assets/search.png'
 import InputForm from '../subcomponents/InputForm'
 
@@ -18,6 +19,7 @@ const SearchBarWrapper = styled.div`
 `
 
 const CardWrapper = styled.div`
+    overflow: hidden;
     font-family: 'Roboto', sans-serif;
     margin-top:4em;
     display:flex;
@@ -27,18 +29,18 @@ const CardWrapper = styled.div`
 
 const Card = styled.div`
     font-family: 'Roboto', sans-serif;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 20%;
-  margin: auto;
-  text-align: center;
-  font-family: arial;  
-  margin: 1em 1em;
-  transition:.3s;
-  cursor:pointer;
-  &:hover{
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    max-width:22%;
-  }
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 20%;
+    margin: auto;
+    text-align: center;
+    font-family: arial;  
+    margin: 1em 1em;
+    transition:.3s;
+    cursor:pointer;
+    &:hover{
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        max-width:22%;
+    }
 `
 const Image = styled.img`
     width:80%;
@@ -146,7 +148,8 @@ const ProductList = () => {
                             <h1 style={{fontFamily: 'Roboto'}}>{product.titulo}</h1>
                             <p style={{fontFamily: 'Raleway'}}>R${product.preco}</p>
                             <p style={{fontFamily: 'Raleway'}}>{product.descricao}</p>
-                            <p><AddButton text="Adicionar ao Carrinho"></AddButton></p>
+                            <DetailButton text="MAIS DETALHES"></DetailButton>
+                            <AddButton text="ADICIONAR AO CARRINHO"></AddButton>
                         </Card>
                     )
                 })}

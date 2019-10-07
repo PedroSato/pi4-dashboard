@@ -181,20 +181,6 @@ const NewProducts = () => {
           <FileLabel htmlFor="files">Carregar imagem</FileLabel>
           <ImageButton id="files" type="file" />
 
-          {/*<InputWrapper>
-            <LabelProduct>Gênero: </LabelProduct>
-            <SelectProduct>
-              <option value="" hidden>Selecionar...</option>
-              <option value="0">AÇÃO</option>
-              <option value="1">AVENTURA</option>
-              <option value="2">LUTA</option>
-              <option value="3">RPG</option>
-              <option value="4">ESTRATÉGIA</option>
-              <option value="5">CORRIDA</option>
-              <option value="6">ESPORTE</option>
-            </SelectProduct>
-          </InputWrapper>*/}
-
         </ColumnWrapper>
       </FormWrapper>
 
