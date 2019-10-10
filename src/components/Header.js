@@ -76,8 +76,6 @@ const Header = () => { // <---- declaração de função em javascript e SIM vc 
             <HeaderWrapper>
                 <DropdownMenu />
                 <Logout>
-                    <LogoutText>Logout</LogoutText>
-                    <Avatar src="https://www.bluecross.org.uk/sites/default/files/d8/assets/images/118809lprLR.jpg"></Avatar>
                 </Logout>
             </HeaderWrapper>
         </ColumnWrapper>

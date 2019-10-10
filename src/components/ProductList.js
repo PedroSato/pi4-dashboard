@@ -6,7 +6,7 @@ import Magnifier from '../assets/search.png'
 import InputForm from '../subcomponents/InputForm'
 
 const SearchBarWrapper = styled.div`
-    
+    font-family: 'Roboto', sans-serif;
     overflow: hidden;
     background-color: #e9e9e9;
     height:4em;
@@ -70,64 +70,64 @@ const ProductList = () => {
         imagem: "https://www.virginmegastore.ae/medias/sys_master/root/h8e/h36/9159138967582/God-of-War-378794-Detail.jpg",
         titulo: "God Of War",
         preco: 150.99,
-        descricao: "Kratos Fudendo tudo como sempre",
+        descricao: "Kratos",
+    }, {
+        imagem: "https://i.imgur.com/RVX019S.png",
+        titulo: "Mario Kart Deluxe 8",
+        preco: 169.90,
+        descricao: "Jogo de corrida",
+    }, {
+        imagem: "https://i.imgur.com/FvF0BDZ.png",
+        titulo: "Grand Theft Auto",
+        preco: 150.99,
+        descricao: "Jogo que ninguém nunca faz as missões",
     }, {
         imagem: "https://www.virginmegastore.ae/medias/sys_master/root/h8e/h36/9159138967582/God-of-War-378794-Detail.jpg",
         titulo: "God Of War",
         preco: 150.99,
-        descricao: "Kratos Fudendo tudo como sempre",
+        descricao: "Kratos",
     }, {
         imagem: "https://www.virginmegastore.ae/medias/sys_master/root/h8e/h36/9159138967582/God-of-War-378794-Detail.jpg",
         titulo: "God Of War",
         preco: 150.99,
-        descricao: "Kratos Fudendo tudo como sempre",
+        descricao: "Kratos",
     }, {
         imagem: "https://www.virginmegastore.ae/medias/sys_master/root/h8e/h36/9159138967582/God-of-War-378794-Detail.jpg",
         titulo: "God Of War",
         preco: 150.99,
-        descricao: "Kratos Fudendo tudo como sempre",
+        descricao: "Kratos",
     }, {
         imagem: "https://www.virginmegastore.ae/medias/sys_master/root/h8e/h36/9159138967582/God-of-War-378794-Detail.jpg",
         titulo: "God Of War",
         preco: 150.99,
-        descricao: "Kratos Fudendo tudo como sempre",
+        descricao: "Kratos",
     }, {
         imagem: "https://www.virginmegastore.ae/medias/sys_master/root/h8e/h36/9159138967582/God-of-War-378794-Detail.jpg",
         titulo: "God Of War",
         preco: 150.99,
-        descricao: "Kratos Fudendo tudo como sempre",
+        descricao: "Kratos",
     }, {
         imagem: "https://www.virginmegastore.ae/medias/sys_master/root/h8e/h36/9159138967582/God-of-War-378794-Detail.jpg",
         titulo: "God Of War",
         preco: 150.99,
-        descricao: "Kratos Fudendo tudo como sempre",
+        descricao: "Kratos",
     }, {
         imagem: "https://www.virginmegastore.ae/medias/sys_master/root/h8e/h36/9159138967582/God-of-War-378794-Detail.jpg",
         titulo: "God Of War",
         preco: 150.99,
-        descricao: "Kratos Fudendo tudo como sempre",
-    }, {
-        imagem: "https://www.virginmegastore.ae/medias/sys_master/root/h8e/h36/9159138967582/God-of-War-378794-Detail.jpg",
-        titulo: "God Of War",
-        preco: 150.99,
-        descricao: "Kratos Fudendo tudo como sempre",
-    }, {
-        imagem: "https://www.virginmegastore.ae/medias/sys_master/root/h8e/h36/9159138967582/God-of-War-378794-Detail.jpg",
-        titulo: "God Of War",
-        preco: 150.99,
-        descricao: "Kratos Fudendo tudo como sempre",
+        descricao: "Kratos",
     },
     {
         imagem: "https://www.virginmegastore.ae/medias/sys_master/root/h8e/h36/9159138967582/God-of-War-378794-Detail.jpg",
         titulo: "God Of War",
         preco: 150.99,
-        descricao: "Kratos Fudendo tudo como sempre",
+        descricao: "Kratos",
     },
     {
         imagem: "https://www.virginmegastore.ae/medias/sys_master/root/h8e/h36/9159138967582/God-of-War-378794-Detail.jpg",
         titulo: "God Of War",
         preco: 150.99,
-        descricao: "Kratos Fudendo tudo como sempre",
+        descricao: "Kratos",
     },])
 
     return (
