@@ -2,18 +2,22 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
 
 const Container = styled.div`
-    margin-top:4em;
+    margin-top: 5em;
     text-align:center;
 `;
-
 
 const ProductTable = () => {
     const [products, setProducts] = useState([]);
    
-  
+    const H1 = styled.h1`
+        margin-right: 25em;
+        margin-bottom: 1.5em;
+    `
+
     const Table = styled.table`
-    width:100%;
-    border: 1px solid black;
+        margin-left: 12.25em;
+        width:75%;
+        border: 1px solid black;
     `;
 
     const Td = styled.td`
@@ -25,13 +29,12 @@ const ProductTable = () => {
 
     return (
         <Container>
-            <h1>PRODUTOS</h1>
+            <H1>PRODUTOS</H1>
             <Table>
                 <thead>
-                    <th>Nome Produto</th>
+                    <th>Nome do Produto</th>
                     <th>Quantidade</th>
                     <th>Preço Unitário</th>
-                    <th>Categoria</th>
                     <th>Ações</th>
                 </thead>
                 <tbody>
@@ -41,7 +44,6 @@ const ProductTable = () => {
                                 <Td>{product.nome}</Td>
                                 <Td><span >- </span>{product.quantidade}<span> +</span></Td>
                                 <Td>{product.precoUnit}</Td>
-                                <Td>{product.categoria}</Td>
                                 <Td>deletar/editar</Td>
                             </tr>
                         )

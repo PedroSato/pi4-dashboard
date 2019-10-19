@@ -17,7 +17,6 @@ const InputProduct = styled.input`
     font-size: 1em;
     border-radius: 0.25em;
     border: 1px solid gray;
-    font-family: 'Raleway', sans-serif;
     
 `
 
@@ -57,9 +56,10 @@ const FormWrapper = styled.div`
     
 `
 
-const ButtonProduct = styled.button`
-    width: 15%;
+const ButtonSave = styled.button`
+    width: 25%;
     height: 3em;
+    margin-left: 7em;
     margin-top: 5em;
     font-size: 1em;
     border-radius: 0.25em;
@@ -67,17 +67,33 @@ const ButtonProduct = styled.button`
     cursor: pointer;
     transition: 0.3s;
     &:hover{
-      background-color: black;
-      color: gray;
+      background-color: #0033FF;
+      color: white;
+    };
+`
+
+const ButtonCancel = styled.button`
+    width: 25%;
+    margin-left: 2em;
+    margin-top: 5em;
+    height: 3em;
+    font-size: 1em;
+    border-radius: 0.25em;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover{
+      background-color: red;
+      color: white;
     };
 `
 
 const FileLabel = styled.label`
     width: 45%;
-    height: 2em;
+    height: 3em;
     font-size: 0.8em;
     text-align: center;
-    padding-top: 0.9em;
+    padding-top: 1em;
     margin-top: 1em;
     border-radius: 0.25em;
     border: none;
@@ -119,10 +135,15 @@ const NewProducts = () => {
     })
   };
 
+  const H1 = styled.h1`
+    margin-right: 18em;
+    margin-bottom: 1.5em;
+  `
+
   return (
 
     <NewProductWrapper>
-      <h1>CADASTRO DE PRODUTOS</h1>
+      <H1>CADASTRO DE PRODUTOS</H1>
       <FormWrapper>
         <ColumnWrapper>
           <InputWrapper>
@@ -183,8 +204,11 @@ const NewProducts = () => {
 
         </ColumnWrapper>
       </FormWrapper>
-
-      <ButtonProduct>SALVAR</ButtonProduct>
+      
+      <RowWrapper>
+        <ButtonSave>SALVAR</ButtonSave><ButtonCancel>CANCELAR</ButtonCancel>
+      </RowWrapper>
+      
 
     </NewProductWrapper>
 
